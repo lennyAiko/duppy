@@ -63,7 +63,7 @@ module.exports = {
     
     // modify session instance
     this.req.session.userId = user.id
-    return '/'
+    return '/dashboard'
 
   }
 

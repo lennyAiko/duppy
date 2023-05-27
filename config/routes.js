@@ -25,4 +25,7 @@
 
   'GET /login': 'auth/view-login',
   'POST /login': 'auth/login',
+
+  'GET /dashboard': 'dashboard/view-index',
+  'POST /dashboard': 'dashboard/index',
 }

@@ -9,17 +9,16 @@ module.exports = {
 
   exits: {
 
-    success: {
-      viewTemplatePath: 'pages/dashboard/index'
-    }
+    success: {}
 
   },
 
 
   fn: async function () {
 
-    // Respond with view.
-    return {};
+    return sails.hook.inertia('dashboard/index', {
+      username
+    })
 
   }
 

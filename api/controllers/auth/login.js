@@ -9,18 +9,61 @@ module.exports = {
 
   inputs: {
 
+    username: {
+      type: 'string',
+      required: true
+    },
+
+    password: {
+      type: 'string',
+      required: true
+    }
+
   },
 
 
   exits: {
+
+    success: {
+      responseType: 'redirect'
+    },
+    badCombo: {
+      statusCode: 400,
+      responseType: 'redirect'
+    }
 
   },
 
 
   fn: async function (inputs) {
 
-    // All done.
-    return;
+    const credentialErrorMessage = 'These credentials do not match our records'
+
+    // check for user in the DB
+    var user = await User.findOne({ username: inputs.username.toLowerCase()})
+
+    // if credentials does not match
+    if (!user) {
+      sails.hook.inertia.share('errors', {
+        email: credentialErrorMessage
+      })
+      throw { badCombo: 'back' }
+    }
+
+    // if password does not match
+    await sails.helpers.passwords
+      .checkPassword(password, user.password)
+      .intercept('incorrect', (error) => {
+        sails.log(error)
+        sails.hook.inertia.share('errors', {
+          password: credentialErrorMessage
+        })
+        return { badCombo: 'back' }
+      })
+    
+    // modify session instance
+    this.req.session.userId = user.id
+    return '/'
 
   }
 

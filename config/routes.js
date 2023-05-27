@@ -19,5 +19,10 @@
    *                                                                          *
    ***************************************************************************/
   'GET /': 'home/index',
-  'GET /example': 'example/index',
+
+  'GET /register': 'auth/view-register',
+  'POST /register': 'auth/register',
+
+  'GET /login': 'auth/view-login',
+  'POST /login': 'auth/login',
 }

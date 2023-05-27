@@ -20,7 +20,7 @@ import { Link } from '@inertiajs/vue3'
         </div>
         <!-- sign up -->
         <div class="max-md:hidden">
-          <a href="" class="bg-blue-950 text-white py-2.5 px-4 rounded-lg shadow-sm">Sign up</a>
+          <a href="/register" class="bg-blue-950 text-white py-2.5 px-4 rounded-lg shadow-sm">Sign up</a>
         </div>
         <!-- ham menu -->
         <div class="hidden max-md:block">

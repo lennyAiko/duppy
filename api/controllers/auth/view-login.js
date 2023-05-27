@@ -9,17 +9,14 @@ module.exports = {
 
   exits: {
 
-    success: {
-      viewTemplatePath: 'pages/auth/login'
-    }
+    success: {}
 
   },
 
 
   fn: async function () {
 
-    // Respond with view.
-    return {};
+    return sails.inertia.render('login')
 
   }
 

@@ -16,8 +16,12 @@ module.exports = {
 
   fn: async function () {
 
-    return sails.hook.inertia('dashboard/index', {
-      username
+    const userId = this.req.session.userId
+
+    const payload = await User.findOne({ id: userId })
+
+    return sails.inertia.render('dashboard/index', {
+      user: payload
     })
 
   }

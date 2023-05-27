@@ -52,7 +52,7 @@ module.exports = {
 
     // if password does not match
     await sails.helpers.passwords
-      .checkPassword(password, user.password)
+      .checkPassword(inputs.password, user.password)
       .intercept('incorrect', (error) => {
         sails.log(error)
         sails.hook.inertia.share('errors', {

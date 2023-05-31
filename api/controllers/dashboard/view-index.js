@@ -20,7 +20,7 @@ module.exports = {
 
     const payload = await User.findOne({ id: userId })
 
-    return sails.inertia.render('dashboard/index', {
+    return sails.inertia.render('dashboard/dashboard', {
       user: payload
     })
 

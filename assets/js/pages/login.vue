@@ -1,10 +1,17 @@
 <script setup>
-
+import { Head, Link } from '@inertiajs/vue3'
+import NavBar from '@/components/NavBar'
 </script>
 
 <template>
-    <h1 class="text-5xl">Login to Duppy</h1>
-    <main class="">
+    
+    <div class="">
+
+        <Head title="Sign in" />
+
+        <nav-bar />
+
+        <h1 class="text-5xl">Login to Duppy</h1>
         <!-- left section -->
         <div class="px-3 py-3">
             <form action="/login" method="POST" class="">
@@ -22,5 +29,5 @@
 
         <!-- right section -->
         <div class=""></div>
-    </main>
+    </div>
 </template>

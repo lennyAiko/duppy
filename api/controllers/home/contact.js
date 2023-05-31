@@ -1,10 +1,10 @@
 module.exports = {
 
 
-  friendlyName: 'Index',
+  friendlyName: 'Contact',
 
 
-  description: 'Index dashboard.',
+  description: 'Contact home.',
 
 
   inputs: {
@@ -19,8 +19,7 @@ module.exports = {
 
   fn: async function (inputs) {
 
-    // All done.
-    return;
+    return sails.inertia.render('contact');
 
   }
 

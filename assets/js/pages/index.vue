@@ -1,10 +1,15 @@
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Head, Link } from '@inertiajs/vue3'
+import NavBar from '@/components/NavBar'
 
 </script>
 
 <template>
-    <main class="">
+    <div class="">
+    <!-- header -->
+    <Head>
+      <title>Home</title>
+    </Head>
     <!-- navbar -->
     <header class="">
       <nav class="flex items-center justify-between py-2 px-6">
@@ -14,13 +19,11 @@ import { Link } from '@inertiajs/vue3'
         </div>
         <!-- menu items -->
         <div class="">
-          <a href="/" class="mx-4 hover:text-blue-600 text-blue-950 font-semibold text-lg">Home</a>
-          <a href="/about" class="mx-4 hover:text-blue-600 text-blue-950 font-semibold text-lg">About</a>
-          <a href="/contact" class="mx-4 hover:text-blue-600 text-blue-950 font-semibold text-lg">Contact</a>
+          <nav-bar />
         </div>
         <!-- sign up -->
         <div class="max-md:hidden">
-          <a href="/register" class="bg-blue-950 text-white py-2.5 px-4 rounded-lg shadow-sm">Sign up</a>
+          <Link href="/register" class="bg-blue-950 text-white py-2.5 px-4 rounded-lg shadow-sm">Sign up</Link>
         </div>
         <!-- ham menu -->
         <div class="hidden max-md:block">
@@ -78,5 +81,5 @@ import { Link } from '@inertiajs/vue3'
       <div class="">Company info</div>
       <div class="">Copyright info</div>
     </footer>
-  </main>
+  </div>
 </template>

@@ -19,6 +19,8 @@
    *                                                                          *
    ***************************************************************************/
   'GET /': 'home/index',
+  'GET /about': 'home/about',
+  'GET /contact': 'home/contact',
 
   'GET /register': 'auth/view-register',
   'POST /register': 'auth/register',
@@ -27,5 +29,4 @@
   'POST /login': 'auth/login',
 
   'GET /dashboard': 'dashboard/view-index',
-  'POST /dashboard': 'dashboard/index',
 }

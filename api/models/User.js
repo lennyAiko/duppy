@@ -33,6 +33,11 @@ module.exports = {
       type: 'string',
       required: true,
       protect: true,
+    },
+
+    endpoints: {
+      collection: 'endpoint',
+      via: 'user'
     }
 
   },

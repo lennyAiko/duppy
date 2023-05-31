@@ -44,10 +44,10 @@ module.exports = {
 
     // if credentials does not match
     if (!user) {
-      sails.hook.inertia.share('errors', {
+      sails.hooks.inertia.share('errors', {
         email: credentialErrorMessage
       })
-      throw { badCombo: 'back' }
+      throw { badCombo: '/register' }
     }
 
     // if password does not match
@@ -55,7 +55,7 @@ module.exports = {
       .checkPassword(inputs.password, user.password)
       .intercept('incorrect', (error) => {
         sails.log(error)
-        sails.hook.inertia.share('errors', {
+        sails.hooks.inertia.share('errors', {
           password: credentialErrorMessage
         })
         return { badCombo: 'back' }
@@ -64,7 +64,6 @@ module.exports = {
     // modify session instance
     this.req.session.userId = user.id
     return '/dashboard'
-
   }
 
 

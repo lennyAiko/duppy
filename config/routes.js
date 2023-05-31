@@ -29,4 +29,14 @@
   'POST /login': 'auth/login',
 
   'GET /dashboard': 'dashboard/view-index',
+
+  'POST /dashboard/create': 'dashboard/create-endpoint',
+  'POST /dashboard/update': 'dashboard/update-endpoint',
+  'POST /dashboard/delete': 'dashboard/delete-endpoint',
+  
+  'POST /dashboard/:endpoint/create': 'dashboard/create-endpoint-data',
+  'POST /dashboard/:endpoint/data': 'dashboard/view-endpoint-data',
+  'POST /dashboard/:endpoint/data/:id': 'dashboard/view-data',
+  'POST /dashboard/:endpoint/data/:id': 'dashboard/update-data',
+  'POST /dashboard/:endpoint/data/:id': 'dashboard/delete-data',
 }

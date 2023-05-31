@@ -20,7 +20,14 @@ module.exports.policies = {
   // '*': true,
 
   // 'home/*': true,
-  'dashboard/*': 'is-authenticated'
+  'dashboard/*': 'is-authenticated',
+  'dashboard/update-endpoint': 'is-owner',
+  'dashboard/delete-endpoint': 'is-owner',
+  'dashboard/create-endpoint-data': 'is-owner',
+  'dashboard/view-endpoint-data': 'is-owner',
+  'dashboard/view-data': 'is-owner',
+  'dashboard/update-data': 'is-owner',
+  'dashboard/delete-data': 'is-owner',
 
 
 };
